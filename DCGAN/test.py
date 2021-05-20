@@ -1,6 +1,6 @@
 import tensorflow as tf
 import numpy as np
-from tensorflow.keras.layers import Dense
+from tensorflow.keras.layers import Dense,Conv2D
 from tensorflow.keras import Sequential
 
 x = np.array(range(0, 10000),dtype=float)
