@@ -22,6 +22,6 @@ class Generator(object):
             Conv2D(64, 5, 5, padding='same', activation=LeakyReLU(0.2)),
             BatchNormalization(),
             UpSampling2D(),
-            Conv2D(3,5,5,padding='same', activation='tanh')
+            Conv2D(3, 5, 5, padding='same', activation='tanh')
         ])
         return model
