@@ -13,13 +13,13 @@ class Discriminator(object):
 
     def dc_model(self):
         model = Sequential([
-            Conv2D(64, 5, 5, input_shape=(64, 64, 3), padding='same', activation=LeakyReLU(0.2)),
+            Conv2D(64, 5, strides=2, input_shape=(28, 28, 1), padding='same', activation=LeakyReLU(0.2)),
             Dropout(0.3),
             BatchNormalization(),
-            Conv2D(128, 5, 5, padding='same', activation=LeakyReLU(0.2)),
+            Conv2D(128, 5, strides=2, padding='same', activation=LeakyReLU(0.2)),
             Dropout(0.3),
             BatchNormalization(),
             Flatten(),
-            Dense(1,activation='sigmoid')
+            Dense(1, activation='sigmoid')
         ])
         return model
