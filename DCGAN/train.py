@@ -26,9 +26,10 @@ Batch_Size = 100
 
 generator.summary()
 #discriminator.summary()
-discriminator.trainable = False
 
-generator = tf.keras.models.load_model('dcgan.h5')
+# generator = tf.keras.models.load_model('dcgan.h5')
+# discriminator = tf.keras.models.load_model('discriminator.h5')
+discriminator.trainable = False
 
 gan = Sequential([generator, discriminator])
 gan.compile(loss='binary_crossentropy',optimizer=Adam(lr=2e-3, decay=8e-9))
@@ -71,6 +72,7 @@ def train():
 
     print('epoch:' + str(count) + '  loss1:' + str(discriminator_loss) + '  gan_loss:' + str(gan_loss))
     generator.save('dcgan.h5')
+    discriminator.save('discriminator.h5')
 
 
 for i in range(20):
