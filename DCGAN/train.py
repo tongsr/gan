@@ -1,5 +1,5 @@
 # https://github.com/marload/GANs-TensorFlow2/blob/master/DCGAN/DCGAN.py
-
+# https://github.com/YunYang1994/TensorFlow2.0-Examples
 
 import tensorflow as tf
 import numpy as np
